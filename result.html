@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ваш результат VadWell</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="result-container">
+
+
+<h1>
+Ваш персональный результат готов
+</h1>
+
+
+<p class="subtitle">
+Ваш VadWell Score показывает,
+на какие аспекты ежедневного самочувствия
+стоит обратить внимание.
+</p>
+
+
+
+<div class="score-card">
+
+
+<div class="score-title">
+VadWell Score
+</div>
+
+
+<div id="wellnessScore" class="score-number">
+--
+</div>
+
+
+<div>
+из 100
+</div>
+
+
+</div>
+
+
+
+
+<h2>
+Ваш профиль
+</h2>
+
+
+
+<div class="results-grid">
+
+
+
+<div class="result-card">
+
+⚡ Энергия
+
+<strong id="energyScore">
+--
+</strong>
+
+</div>
+
+
+
+
+<div class="result-card">
+
+🌿 Восстановление
+
+<strong id="recoveryScore">
+--
+</strong>
+
+</div>
+
+
+
+
+<div class="result-card">
+
+🚶 Активность
+
+<strong id="activityScore">
+--
+</strong>
+
+</div>
+
+
+
+
+<div class="result-card">
+
+💧 Привычки
+
+<strong id="habitsScore">
+--
+</strong>
+
+</div>
+
+
+
+
+<div class="result-card">
+
+❤️ Забота о себе
+
+<strong id="selfCareScore">
+--
+</strong>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="attention-card">
+
+
+<h2>
+Главная зона внимания
+</h2>
+
+
+<h3 id="mainZone">
+--
+</h3>
+
+
+<p id="recommendationText">
+--
+</p>
+
+
+</div>
+
+
+
+
+<button 
+class="primary-button"
+onclick="goToContact()">
+
+Получить рекомендации
+
+</button>
+
+
+
+</div>
+
+
+
+<script src="js/result.js"></script>
+
+
+
+<script>
+
+
+function goToContact(){
+
+window.location.href =
+"contact.html";
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>
