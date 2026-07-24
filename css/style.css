@@ -1,1 +1,435 @@
+/* VadWell 2.0 - Main Styles */
 
+
+/* Основные настройки */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+    Arial, Helvetica, sans-serif;
+
+    background:
+    #f7f9f8;
+
+    color:
+    #243238;
+
+}
+
+
+/* Общий контейнер */
+
+.test-container,
+.result-container,
+.contact-container {
+
+    max-width: 520px;
+
+    margin: 0 auto;
+
+    padding: 30px 20px;
+
+}
+
+
+/* Логотип */
+
+.logo {
+
+    text-align: center;
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+    margin-bottom: 25px;
+
+    color:
+    #2f7d6d;
+
+}
+
+
+
+/* Заголовки */
+
+h1 {
+
+    font-size: 26px;
+
+    line-height: 1.3;
+
+    text-align: center;
+
+}
+
+
+h2 {
+
+    margin-top: 30px;
+
+}
+
+
+
+/* Подзаголовок */
+
+.subtitle {
+
+    text-align: center;
+
+    color:
+    #607278;
+
+    line-height: 1.5;
+
+}
+
+
+
+/* Прогресс */
+
+.progress-area {
+
+    margin-bottom: 25px;
+
+}
+
+
+.category {
+
+    text-align: center;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    color:
+    #2f7d6d;
+
+}
+
+
+.question-number {
+
+    text-align: center;
+
+    margin: 10px 0;
+
+    color:
+    #75858a;
+
+}
+
+
+
+.progress-line {
+
+    width:100%;
+
+    height:8px;
+
+    background:
+    #e2e8e6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+
+
+.progress-fill {
+
+    height:100%;
+
+    width:0%;
+
+    background:
+    #2f7d6d;
+
+    transition:
+    width .3s ease;
+
+}
+
+
+
+/* Карточка вопроса */
+
+.question-card {
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,0.06);
+
+}
+
+
+
+/* Ответы */
+
+.answers-container {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:25px;
+
+}
+
+
+
+.answer-button {
+
+    border:none;
+
+    background:
+    #ffffff;
+
+    border:1px solid #dce5e2;
+
+    padding:16px;
+
+    border-radius:14px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    text-align:left;
+
+    transition:.2s;
+
+}
+
+
+
+.answer-button:hover {
+
+    background:
+    #edf7f3;
+
+    border-color:
+    #2f7d6d;
+
+}
+
+
+
+/* Результат */
+
+.score-card {
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    margin:25px 0;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,0.07);
+
+}
+
+
+
+.score-title {
+
+    font-size:18px;
+
+}
+
+
+
+.score-number {
+
+    font-size:64px;
+
+    font-weight:700;
+
+    color:
+    #2f7d6d;
+
+}
+
+
+
+/* Карточки результата */
+
+.results-grid {
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+
+}
+
+
+
+.result-card {
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.05);
+
+}
+
+
+.result-card strong {
+
+    display:block;
+
+    font-size:24px;
+
+    margin-top:10px;
+
+}
+
+
+
+/* Зона внимания */
+
+.attention-card {
+
+    background:
+    #edf7f3;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    margin-top:25px;
+
+}
+
+
+
+/* Кнопка */
+
+.primary-button {
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:
+    #2f7d6d;
+
+    color:white;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+}
+
+
+
+/* Форма */
+
+form {
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+}
+
+
+
+label {
+
+    display:block;
+
+    margin-top:15px;
+
+    margin-bottom:6px;
+
+}
+
+
+
+input {
+
+    width:100%;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    border:1px solid #d9e2df;
+
+    font-size:16px;
+
+}
+
+
+
+.checkbox {
+
+    display:flex;
+
+    gap:10px;
+
+    align-items:center;
+
+}
+
+
+
+/* Мобильная версия */
+
+@media(max-width:600px){
+
+    .results-grid {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    h1 {
+
+        font-size:23px;
+
+    }
+
+}
