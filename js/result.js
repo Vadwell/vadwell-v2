@@ -29,7 +29,36 @@ document.getElementById(
 ).innerHTML =
 data.wellnessScore;
 
+// Сообщение по уровню результата
 
+let scoreMessage = "";
+
+if(data.wellnessScore >= 80){
+
+scoreMessage =
+"Отличный уровень заботы о себе. Ваша задача — поддерживать этот ресурс и помогать организму восстанавливаться.";
+
+}
+
+else if(data.wellnessScore >= 50){
+
+scoreMessage =
+"У вас есть хорошая основа. Несколько изменений в ежедневных привычках могут помочь улучшить энергию и восстановление.";
+
+}
+
+else{
+
+scoreMessage =
+"Ваш результат показывает, что организму может требоваться больше внимания, восстановления и заботы о себе.";
+
+}
+
+
+document.getElementById(
+"scoreMessage"
+).innerHTML =
+scoreMessage;
 
 // Категории
 
