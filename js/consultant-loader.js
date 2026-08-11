@@ -1,36 +1,23 @@
 // VadWell Consultant Loader
 
-
-const consultants = {
-
-
 const consultants = {
 
   "vadim-samara": {
 
     id: "vadim-samara",
-
     name: "Вадим",
-
     city: "Самара",
-
     telegram: "@vadwell",
-
     photo: "images/vadim.jpg"
 
   },
 
-
   "elena-samara": {
 
     id: "elena-samara",
-
     name: "Елена",
-
     city: "Самара",
-
     telegram: "@Lenwell28",
-
     photo: ""
 
   }
@@ -38,54 +25,68 @@ const consultants = {
 };
 
 
+// Получаем ID консультанта из ссылки
 
-// Получаем ID из ссылки
-
-const params =
+const consultantParams =
 new URLSearchParams(
-window.location.search
+  window.location.search
 );
 
-
 let consultantId =
-params.get("id");
+consultantParams.get("id");
 
 
+// Если ID отсутствует в текущей ссылке,
+// берём консультанта, сохранённого ранее
 
-// Если ID нет,
-// используем значение по умолчанию
+if (!consultantId) {
 
-if(!consultantId){
-
-consultantId =
-"vadim-samara";
+  consultantId =
+  localStorage.getItem(
+    "vadwellConsultantId"
+  );
 
 }
 
 
+// Если консультант ещё не определён,
+// используем Вадима по умолчанию
 
-// Находим консультанта
+if (!consultantId) {
 
-const consultant =
+  consultantId =
+  "vadim-samara";
+
+}
+
+
+// Проверяем существование консультанта
+
+let consultant =
 consultants[consultantId];
 
 
+// Если в ссылке указан неизвестный ID
 
-// Сохраняем данные
+if (!consultant) {
 
-if(consultant){
+  consultantId =
+  "vadim-samara";
+
+  consultant =
+  consultants[consultantId];
+
+}
+
+
+// Сохраняем консультанта
 
 localStorage.setItem(
-
-"consultant",
-
-JSON.stringify(consultant)
-
+  "consultant",
+  JSON.stringify(consultant)
 );
 
 localStorage.setItem(
   "vadwellConsultantId",
   consultantId
 );
-  
-}
