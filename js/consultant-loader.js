@@ -4,20 +4,36 @@
 const consultants = {
 
 
-"vadim-samara": {
+const consultants = {
 
-id:"vadim-samara",
+  "vadim-samara": {
 
-name:"Вадим",
+    id: "vadim-samara",
 
-city:"Самара",
+    name: "Вадим",
 
-telegram:"@vadwell",
+    city: "Самара",
 
-photo:"images/vadim.jpg"
+    telegram: "@vadwell",
 
-}
+    photo: "images/vadim.jpg"
 
+  },
+
+
+  "elena-samara": {
+
+    id: "elena-samara",
+
+    name: "Елена",
+
+    city: "Самара",
+
+    telegram: "@Lenwell28",
+
+    photo: ""
+
+  }
 
 };
 
