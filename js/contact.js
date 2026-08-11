@@ -23,7 +23,10 @@ telegramElement ? telegramElement.value : "";
 const city =
 document.getElementById("city").value;
 
-const result =
+ const goal =
+document.getElementById("goal").value; 
+
+  const result =
 JSON.parse(
 localStorage.getItem("vadwellResult")
 );
@@ -51,6 +54,8 @@ telegram: telegram,
 
 city: city,
 
+goal:goal,
+  
 score:
 result ? result.wellnessScore : 0,
 
