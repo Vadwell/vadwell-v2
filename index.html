@@ -128,13 +128,18 @@ document.getElementById(
 ).innerHTML =
 consultant.city;
 
- const params = new URLSearchParams(window.location.search);
+ const sourceParams =
+new URLSearchParams(window.location.search);
 
-const source = params.get("src");
+const source =
+sourceParams.get("src");
 
 if (source) {
-    localStorage.setItem("vadwellSource", source);
-} 
+    localStorage.setItem(
+        "vadwellSource",
+        source
+    );
+}
 </script>
 <script src="js/analytics.js"></script>
 
