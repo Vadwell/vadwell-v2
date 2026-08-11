@@ -14,8 +14,11 @@ document.getElementById("name").value;
 const phone =
 document.getElementById("phone").value;
 
+const telegramElement =
+document.getElementById("telegram");
+
 const telegram =
-document.getElementById("telegram").value;
+telegramElement ? telegramElement.value : "";
 
 const city =
 document.getElementById("city").value;
