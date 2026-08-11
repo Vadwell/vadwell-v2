@@ -91,14 +91,18 @@ class="answers-container">
 
 
 
-<!-- Сначала загружаем вопросы -->
+<!-- Аналитика VadWell -->
+<script src="js/analytics.js"></script>
 
+<!-- Сначала загружаем вопросы -->
 <script src="js/questions.js"></script>
 
-
 <!-- Затем запускаем тест -->
-
 <script src="js/test.js"></script>
+
+<script>
+sendFunnelEvent("START");
+</script>
 
 
 
