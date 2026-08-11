@@ -167,26 +167,45 @@ function updateProgress(){
 function finishTest(){
 
 
-    let totalScore = 0;
+    const energyPercent =
+Math.round(
+    (categoryScores.energy / categoryMax.energy) * 100
+);
+
+const recoveryPercent =
+Math.round(
+    (categoryScores.recovery / categoryMax.recovery) * 100
+);
+
+const activityPercent =
+Math.round(
+    (categoryScores.activity / categoryMax.activity) * 100
+);
+
+const habitsPercent =
+Math.round(
+    (categoryScores.habits / categoryMax.habits) * 100
+);
+
+const selfCarePercent =
+Math.round(
+    (categoryScores.selfCare / categoryMax.selfCare) * 100
+);
+
+const wellnessScore =
+Math.round(
+    (
+        energyPercent +
+        recoveryPercent +
+        activityPercent +
+        habitsPercent +
+        selfCarePercent
+    ) / 5
+);
 
 
-    answers.forEach(answer=>{
 
-        totalScore += answer.score;
-
-    });
-
-
-
-    let maxScore =
-    questions.length * 10;
-
-
-
-    let wellnessScore =
-    Math.round(
-        (totalScore / maxScore) * 100
-    );
+    
 
 
 
