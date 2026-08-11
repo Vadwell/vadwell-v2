@@ -2,259 +2,133 @@
 <html lang="ru">
 
 <head>
+  <meta charset="UTF-8">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<title>VadWell — Wellness Test</title>
+  <title>VadWell — Wellness Test</title>
 
-<link rel="stylesheet" href="css/style.css">
-
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 
 <body>
 
-
 <header class="hero">
 
-<div class="container">
+  <div class="container">
 
+    <div class="logo">
+      VadWell
+    </div>
 
-<h1>
-Узнайте, что влияет на вашу энергию и самочувствие
-</h1>
+    <h1>
+      Узнайте, что влияет на вашу энергию
+      и самочувствие
+    </h1>
 
+    <p>
+      Пройдите бесплатный Wellness-тест за 2 минуты
+      и получите персональный результат
+      по 5 ключевым направлениям.
+    </p>
 
-<p>
-Пройдите бесплатный Wellness-тест за 2 минуты 
-и получите персональные рекомендации.
-</p>
+    <a href="test.html" class="button">
+      Пройти тест бесплатно
+    </a>
 
+    <div class="advantages">
 
-<a href="test.html" class="button">
-Пройти тест бесплатно
-</a>
+      <div>
+        ✓ 12 вопросов
+      </div>
 
+      <div>
+        ✓ 2 минуты
+      </div>
 
-<div class="advantages">
+      <div>
+        ✓ Персональный результат
+      </div>
 
-<div>
-✓ 2 минуты
-</div>
+    </div>
 
-<div>
-✓ Бесплатно
-</div>
-
-<div>
-✓ Персональный результат
-</div>
-
-
-</div>
-
-
-</div>
+  </div>
 
 </header>
 
 
+<section class="about">
+
+  <div class="container">
+
+    <h2>
+      Что вы получите
+    </h2>
+
+    <p>
+      После теста вы увидите свой VadWell Score,
+      уровень энергии, восстановления, активности,
+      привычек и заботы о себе,
+      а также персональную рекомендацию.
+    </p>
+
+  </div>
+
+</section>
+
 
 <section class="consultant">
 
-<div class="container">
+  <div class="container">
 
+    <p class="subtitle">
+      Ваш Wellness-консультант
+    </p>
 
-<h2>
-Ваш Wellness-консультант
-</h2>
+    <h3 id="consultantName">
+    </h3>
 
+    <p id="consultantCity">
+    </p>
 
-<h3 id="consultantName"></h3>
-
-<p id="consultantCity"></p>
-
-
-</div>
-
-</section>
-
-
-
-
-<section class="about">
-
-
-<div class="container">
-
-
-<h2>
-Что такое VadWell?
-</h2>
-
-
-<p>
-
-VadWell помогает лучше понять своё текущее состояние,
-оценить уровень энергии и получить рекомендации,
-которые можно применять в повседневной жизни.
-
-</p>
-
-
-</div>
-
+  </div>
 
 </section>
-
-
-
-
-<section class="how">
-
-
-<div class="container">
-
-
-<h2>
-Как это работает?
-</h2>
-
-
-<div class="steps">
-
-
-<div>
-1️⃣ Ответьте на вопросы
-</div>
-
-
-<div>
-2️⃣ Получите Wellness Score
-</div>
-
-
-<div>
-3️⃣ Получите рекомендации
-</div>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-<section class="recommend">
-
-
-<div class="container">
-
-
-<h2>
-Рекомендуйте VadWell
-</h2>
-
-
-<p>
-
-Поделитесь тестом с близкими,
-чтобы они тоже могли оценить своё самочувствие.
-
-</p>
-
-
-<button class="button" onclick="shareTest()">
-
-Рекомендовать
-
-</button>
-
-
-</div>
-
-
-</section>
-
-
-
-
 
 
 <section class="final">
 
+  <div class="container">
 
-<div class="container">
+    <h2>
+      Готовы узнать свой VadWell Score?
+    </h2>
 
+    <a href="test.html" class="button">
+      Начать тест
+    </a>
 
-<h2>
-Готовы узнать свой Wellness Score?
-</h2>
-
-
-<a href="test.html" class="button">
-Начать тест
-</a>
-
-
-</div>
-
+  </div>
 
 </section>
 
 
-
-
 <script src="config/consultant.js"></script>
-
 
 <script>
 
-
-document.getElementById("consultantName").innerHTML =
+document.getElementById(
+  "consultantName"
+).innerHTML =
 consultant.name;
 
-
-document.getElementById("consultantCity").innerHTML =
+document.getElementById(
+  "consultantCity"
+).innerHTML =
 consultant.city;
 
-
-
-function shareTest(){
-
-if(navigator.share){
-
-navigator.share({
-
-title:"VadWell Wellness Test",
-
-text:"Пройди бесплатный Wellness-тест",
-
-url:window.location.href
-
-});
-
-}
-
-else{
-
-alert("Скопируйте ссылку и отправьте её друзьям");
-
-}
-
-}
-
-
 </script>
-
-
 
 </body>
 
