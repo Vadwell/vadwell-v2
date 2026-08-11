@@ -118,15 +118,24 @@
 
 <script>
 
-document.getElementById(
-  "consultantName"
-).innerHTML =
-consultant.name;
+const activeConsultant =
+JSON.parse(
+  localStorage.getItem("consultant")
+);
 
-document.getElementById(
-  "consultantCity"
-).innerHTML =
-consultant.city;
+if (activeConsultant) {
+
+  document.getElementById(
+    "consultantName"
+  ).innerHTML =
+  activeConsultant.name;
+
+  document.getElementById(
+    "consultantCity"
+  ).innerHTML =
+  activeConsultant.city;
+
+}
 
  const sourceParams =
 new URLSearchParams(window.location.search);
