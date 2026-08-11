@@ -104,6 +104,11 @@ await response.json();
 
 if(data.ok){
 
+sendFunnelEvent(
+    "LEAD",
+    result ? result.wellnessScore : ""
+); 
+ 
 window.location.href =
 "thanks.html";
 
