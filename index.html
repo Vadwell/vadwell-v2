@@ -136,7 +136,11 @@ if (source) {
     localStorage.setItem("vadwellSource", source);
 } 
 </script>
+<script src="js/analytics.js"></script>
 
+<script>
+sendFunnelEvent("OPEN");
+</script>
 </body>
 
 </html>
