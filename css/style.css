@@ -463,7 +463,39 @@ input:focus {
 /* =========================
    МОБИЛЬНАЯ ВЕРСИЯ
 ========================= */
+/* Подарок VadWell */
 
+.gift-box {
+  margin-top: 24px;
+  padding: 22px;
+  background: #edf7f3;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.gift-icon {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.gift-box h3 {
+  margin: 5px 0 12px;
+  font-size: 20px;
+}
+
+.gift-box p {
+  margin: 8px 0;
+  color: #52666c;
+  line-height: 1.5;
+}
+
+.gift-note {
+  margin: 14px 5px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #75858a;
+  line-height: 1.4;
+}
 @media (max-width: 600px) {
 
   .container {
