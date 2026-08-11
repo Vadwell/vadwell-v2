@@ -67,4 +67,9 @@ JSON.stringify(consultant)
 
 );
 
+localStorage.setItem(
+  "vadwellConsultantId",
+  consultantId
+);
+  
 }
