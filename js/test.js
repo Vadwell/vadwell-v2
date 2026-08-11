@@ -262,7 +262,10 @@ Math.round(
 
     );
 
-
+sendFunnelEvent(
+    "FINISH",
+    result.wellnessScore
+);
 
     window.location.href =
     "result.html";
