@@ -23,6 +23,9 @@ telegramElement ? telegramElement.value : "";
 const city =
 document.getElementById("city").value;
 
+const source =
+localStorage.getItem("vadwellSource") || "direct";
+ 
  const goal =
 document.getElementById("goal").value; 
 
@@ -55,7 +58,9 @@ telegram: telegram,
 city: city,
 
 goal:goal,
-  
+
+source:source,
+ 
 score:
 result ? result.wellnessScore : 0,
 
