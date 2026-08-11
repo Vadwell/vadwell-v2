@@ -54,6 +54,10 @@ function sendFunnelEvent(
     source:
       getVadwellSource(),
 
+      consultantId:
+    localStorage.getItem("vadwellConsultantId")
+    || "vadim-samara",
+
     score:
       score,
 
