@@ -94,12 +94,8 @@ await response.json();
 
 if(data.ok){
 
-alert(
-"Спасибо! Ваша заявка отправлена. Консультант VadWell свяжется с вами."
-);
-
 window.location.href =
-"index.html";
+"thanks.html";
 
 }
 
