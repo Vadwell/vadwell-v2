@@ -22,6 +22,20 @@ const consultants = {
 
   }
 
+"gulnara-samara": {
+
+  id: "gulnara-samara",
+
+  name: "Гульнара",
+
+  city: "Самара",
+
+  telegram: "@gylnara70",
+
+  photo: ""
+
+}
+  
 };
 
 
