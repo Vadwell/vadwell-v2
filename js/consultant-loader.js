@@ -3,93 +3,98 @@
 const consultants = {
 
   "vadim-samara": {
-
     id: "vadim-samara",
     name: "Вадим",
     city: "Самара",
     telegram: "@vadwell",
     photo: "images/vadim.jpg"
-
   },
 
   "elena-samara": {
-
     id: "elena-samara",
     name: "Елена",
     city: "Самара",
     telegram: "@Lenwell28",
     photo: ""
-
   },
 
   "gulnara-samara": {
-
-   id: "gulnara-samara",
-   name: "Гульнара",
-   city: "Самара",
-   telegram: "@gylnara70",
-   photo: ""
-
+    id: "gulnara-samara",
+    name: "Гульнара",
+    city: "Самара",
+    telegram: "@gylnara70",
+    photo: ""
   }
-  
+
 };
 
 
 // Получаем ID консультанта из ссылки
 
 const consultantParams =
-new URLSearchParams(
-  window.location.search
-);
+  new URLSearchParams(window.location.search);
 
-let consultantId =
-consultantParams.get("id");
+const consultantFromUrl =
+  consultantParams.get("id");
+
+let consultantId;
 
 
-// Если ID отсутствует в текущей ссылке,
-// берём консультанта, сохранённого ранее
+// 1. Если консультант указан в ссылке,
+// ссылка ВСЕГДА имеет приоритет
 
-if (!consultantId) {
+if (
+  consultantFromUrl &&
+  consultants[consultantFromUrl]
+) {
 
-  consultantId =
-  localStorage.getItem(
-    "vadwellConsultantId"
+  consultantId = consultantFromUrl;
+
+  localStorage.setItem(
+    "vadwellConsultantId",
+    consultantId
   );
 
 }
 
 
-// Если консультант ещё не определён,
-// используем Вадима по умолчанию
+// 2. Если ID в ссылке нет,
+// продолжаем путь с ранее сохранённым консультантом
 
-if (!consultantId) {
+else {
 
-  consultantId =
-  "vadim-samara";
+  const savedConsultantId =
+    localStorage.getItem(
+      "vadwellConsultantId"
+    );
+
+  if (
+    savedConsultantId &&
+    consultants[savedConsultantId]
+  ) {
+
+    consultantId =
+      savedConsultantId;
+
+  }
+
+  else {
+
+    consultantId =
+      "vadim-samara";
+
+  }
 
 }
 
 
-// Проверяем существование консультанта
+// Получаем данные активного консультанта
 
-let consultant =
-consultants[consultantId];
-
-
-// Если в ссылке указан неизвестный ID
-
-if (!consultant) {
-
-  consultantId =
-  "vadim-samara";
-
-  consultant =
+const consultant =
   consultants[consultantId];
 
-}
 
-
-// Сохраняем консультанта
+// Сохраняем полный профиль
 
 localStorage.setItem(
   "consultant",
