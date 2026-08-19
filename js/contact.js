@@ -100,17 +100,36 @@ JSON.stringify(lead)
 
 try {
 
-fetch(
-"https://script.google.com/macros/s/AKfycbwopKCJF7Mf1jcpcMbIqNKMosEIk0uPyNAPyqDfsYH310i0bspaZbvgokDgmXpF3xVZIg/exec",
-{
-method: "POST",
-mode: "no-cors",
-headers: {
-  "Content-Type": "text/plain;charset=utf-8"
-},
-body: JSON.stringify(lead)
-}
+const url =
+"https://script.google.com/macros/s/AKfycbwopKCJF7Mf1jcpcMbIqNKMosEIk0uPyNAPyqDfsYH310i0bspaZbvgokDgmXpF3xVZIg/exec";
+
+const blob =
+new Blob(
+  [JSON.stringify(lead)],
+  {
+    type: "text/plain;charset=utf-8"
+  }
 );
+
+const sent =
+navigator.sendBeacon(
+  url,
+  blob
+);
+
+if (!sent) {
+  throw new Error(
+    "Не удалось отправить заявку"
+  );
+}
+
+sendFunnelEvent(
+  "LEAD",
+  result ? result.wellnessScore : ""
+);
+
+window.location.href =
+"thanks.html";
 
 sendFunnelEvent(
   "LEAD",
