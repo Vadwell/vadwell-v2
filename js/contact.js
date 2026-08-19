@@ -100,40 +100,25 @@ localStorage.setItem(
 
 try {
 
-try {
-
-  const url =
-  "https://script.google.com/macros/s/AKfycbwopKCJF7Mf1jcpcMbIqNKMosEIk0uPyNAPyqDfsYH310i0bspaZbvgokDgmXpF3xVZIg/exec";
-
-  fetch(
-    url,
+  await fetch(
+    "https://script.google.com/macros/s/AKfycbwopKCJF7Mf1jcpcMbIqNKMosEIk0uPyNAPyqDfsYH310i0bspaZbvgokDgmXpF3xVZIg/exec",
     {
       method: "POST",
       mode: "no-cors",
-      keepalive: true,
       headers: {
         "Content-Type": "text/plain;charset=utf-8"
       },
       body: JSON.stringify(lead)
     }
-  ).catch(function(error) {
-    console.error(
-      "Ошибка фоновой отправки:",
-      error
-    );
-  });
+  );
 
   sendFunnelEvent(
     "LEAD",
     result ? result.wellnessScore : ""
   );
 
-  setTimeout(function(){
-
-    window.location.href =
-    "thanks.html";
-
-  }, 800);
+  window.location.href =
+  "thanks.html";
 
 }
 
