@@ -100,36 +100,40 @@ localStorage.setItem(
 
 try {
 
+try {
+
   const url =
   "https://script.google.com/macros/s/AKfycbwopKCJF7Mf1jcpcMbIqNKMosEIk0uPyNAPyqDfsYH310i0bspaZbvgokDgmXpF3xVZIg/exec";
 
-  const blob =
-  new Blob(
-    [JSON.stringify(lead)],
-    {
-      type: "text/plain;charset=utf-8"
-    }
-  );
-
-  const sent =
-  navigator.sendBeacon(
+  fetch(
     url,
-    blob
-  );
-
-  if (!sent) {
-    throw new Error(
-      "Не удалось отправить заявку"
+    {
+      method: "POST",
+      mode: "no-cors",
+      keepalive: true,
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8"
+      },
+      body: JSON.stringify(lead)
+    }
+  ).catch(function(error) {
+    console.error(
+      "Ошибка фоновой отправки:",
+      error
     );
-  }
+  });
 
   sendFunnelEvent(
     "LEAD",
     result ? result.wellnessScore : ""
   );
 
-  window.location.href =
-  "thanks.html";
+  setTimeout(function(){
+
+    window.location.href =
+    "thanks.html";
+
+  }, 800);
 
 }
 
