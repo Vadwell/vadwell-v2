@@ -100,7 +100,7 @@ JSON.stringify(lead)
 
 try {
 
-await fetch(
+fetch(
 "https://script.google.com/macros/s/AKfycbwopKCJF7Mf1jcpcMbIqNKMosEIk0uPyNAPyqDfsYH310i0bspaZbvgokDgmXpF3xVZIg/exec",
 {
 method: "POST",
@@ -117,10 +117,12 @@ sendFunnelEvent(
   result ? result.wellnessScore : ""
 );
 
-window.location.href =
-"thanks.html";
+setTimeout(function(){
 
-}
+  window.location.href =
+  "thanks.html";
+
+}, 400);
 
 catch(error){
 
