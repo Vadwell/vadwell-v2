@@ -16,7 +16,7 @@ document.querySelector(
 submitButton.disabled = true;
 submitButton.innerHTML =
 "Отправляем заявку...";
- 
+
 const name =
 document.getElementById("name").value;
 
@@ -34,129 +34,120 @@ document.getElementById("city").value;
 
 const source =
 localStorage.getItem("vadwellSource") || "direct";
- 
- const goal =
-document.getElementById("goal").value; 
 
-  const result =
+const goal =
+document.getElementById("goal").value;
+
+const result =
 JSON.parse(
-localStorage.getItem("vadwellResult")
+  localStorage.getItem("vadwellResult")
 );
 
 const consultant =
 JSON.parse(
-localStorage.getItem("consultant")
+  localStorage.getItem("consultant")
 );
 
 const lead = {
 
-id: Date.now(),
+  id: Date.now(),
 
-date:
-new Date().toLocaleString("ru-RU"),
+  date:
+  new Date().toLocaleString("ru-RU"),
 
-consultant:
-consultant || "default",
+  consultant:
+  consultant || "default",
 
-name: name,
+  name: name,
 
-phone: phone,
+  phone: phone,
 
-telegram: telegram,
+  telegram: telegram,
 
-city: city,
+  city: city,
 
-goal:goal,
+  goal: goal,
 
-source:source,
- 
-score:
-result ? result.wellnessScore : 0,
+  source: source,
 
-energy:
-result ? result.energy : 0,
+  score:
+  result ? result.wellnessScore : 0,
 
-recovery:
-result ? result.recovery : 0,
+  energy:
+  result ? result.energy : 0,
 
-activity:
-result ? result.activity : 0,
+  recovery:
+  result ? result.recovery : 0,
 
-habits:
-result ? result.habits : 0,
+  activity:
+  result ? result.activity : 0,
 
-selfCare:
-result ? result.selfCare : 0,
+  habits:
+  result ? result.habits : 0,
 
-status:
-"Новая заявка"
+  selfCare:
+  result ? result.selfCare : 0,
+
+  status:
+  "Новая заявка"
 
 };
 
 localStorage.setItem(
-"vadwellLead",
-JSON.stringify(lead)
+  "vadwellLead",
+  JSON.stringify(lead)
 );
 
 try {
 
-const url =
-"https://script.google.com/macros/s/AKfycbwopKCJF7Mf1jcpcMbIqNKMosEIk0uPyNAPyqDfsYH310i0bspaZbvgokDgmXpF3xVZIg/exec";
+  const url =
+  "https://script.google.com/macros/s/AKfycbwopKCJF7Mf1jcpcMbIqNKMosEIk0uPyNAPyqDfsYH310i0bspaZbvgokDgmXpF3xVZIg/exec";
 
-const blob =
-new Blob(
-  [JSON.stringify(lead)],
-  {
-    type: "text/plain;charset=utf-8"
-  }
-);
-
-const sent =
-navigator.sendBeacon(
-  url,
-  blob
-);
-
-if (!sent) {
-  throw new Error(
-    "Не удалось отправить заявку"
+  const blob =
+  new Blob(
+    [JSON.stringify(lead)],
+    {
+      type: "text/plain;charset=utf-8"
+    }
   );
-}
 
-sendFunnelEvent(
-  "LEAD",
-  result ? result.wellnessScore : ""
-);
+  const sent =
+  navigator.sendBeacon(
+    url,
+    blob
+  );
 
-window.location.href =
-"thanks.html";
+  if (!sent) {
+    throw new Error(
+      "Не удалось отправить заявку"
+    );
+  }
 
-sendFunnelEvent(
-  "LEAD",
-  result ? result.wellnessScore : ""
-);
-
-setTimeout(function(){
+  sendFunnelEvent(
+    "LEAD",
+    result ? result.wellnessScore : ""
+  );
 
   window.location.href =
   "thanks.html";
 
-}, 400);
+}
 
 catch(error){
 
-console.error(
-"Ошибка отправки заявки:",
-error
-);
+  console.error(
+    "Ошибка отправки заявки:",
+    error
+  );
 
- submitButton.disabled = false;
-submitButton.innerHTML =
-"Получить 15 минут в подарок";
-  
-alert(
-"Не удалось отправить заявку. Попробуйте ещё раз."
-);
+  submitButton.disabled = false;
+
+  submitButton.innerHTML =
+  "Получить 15 минут в подарок";
+
+  alert(
+    "Не удалось отправить заявку. Попробуйте ещё раз."
+  );
 
 }
 
