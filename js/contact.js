@@ -8,6 +8,15 @@ async function(event){
 
 event.preventDefault();
 
+const submitButton =
+document.querySelector(
+  '#contactForm button[type="submit"]'
+);
+
+submitButton.disabled = true;
+submitButton.innerHTML =
+"Отправляем заявку...";
+ 
 const name =
 document.getElementById("name").value;
 
