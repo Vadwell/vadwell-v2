@@ -108,28 +108,25 @@ body: JSON.stringify(lead)
 }
 );
 
-const data =
-await response.json();
-
-if(data.ok){
-
-sendFunnelEvent(
-    "LEAD",
-    result ? result.wellnessScore : ""
-); 
- 
-window.location.href =
-"thanks.html";
-
+await fetch(
+"https://script.google.com/macros/s/AKfycbwopKCJF7Mf1jcpcMbIqNKMosEIk0uPyNAPyqDfsYH310i0bspaZbvgokDgmXpF3xVZIg/exec",
+{
+method: "POST",
+mode: "no-cors",
+headers: {
+  "Content-Type": "text/plain;charset=utf-8"
+},
+body: JSON.stringify(lead)
 }
-
-else{
-
-throw new Error(
-data.error || "Ошибка отправки"
 );
 
-}
+sendFunnelEvent(
+  "LEAD",
+  result ? result.wellnessScore : ""
+);
+
+window.location.href =
+"thanks.html";
 
 }
 
@@ -140,6 +137,10 @@ console.error(
 error
 );
 
+ submitButton.disabled = false;
+submitButton.innerHTML =
+"Получить 15 минут в подарок";
+  
 alert(
 "Не удалось отправить заявку. Попробуйте ещё раз."
 );
