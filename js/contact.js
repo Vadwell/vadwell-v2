@@ -100,14 +100,6 @@ JSON.stringify(lead)
 
 try {
 
-const response = await fetch(
-"https://script.google.com/macros/s/AKfycbwopKCJF7Mf1jcpcMbIqNKMosEIk0uPyNAPyqDfsYH310i0bspaZbvgokDgmXpF3xVZIg/exec",
-{
-method: "POST",
-body: JSON.stringify(lead)
-}
-);
-
 await fetch(
 "https://script.google.com/macros/s/AKfycbwopKCJF7Mf1jcpcMbIqNKMosEIk0uPyNAPyqDfsYH310i0bspaZbvgokDgmXpF3xVZIg/exec",
 {
